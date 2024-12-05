@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void displayRules() {
+    printf("Welcome to the Dice Game!\n");
+    printf("Roll the dice to reach exactly 20 points. If you exceed 20, you lose!\n");
+}
+
+int main() {
+    int score = 0, roll;
+    char choice;
+
+    srand(time(0));// getting random number 
+
+    displayRules();
+    while (score < 20) {
+        printf("Press 'r' to roll the dice, or 'q' to quit: ");
+        scanf(" %c", &choice);
+        
+        if (choice == 'q') break;
+
+        if (choice == 'r') {
+            roll = (rand() % 6) + 1; // Dice roll between 1-6
+            printf("You rolled: %d\n", roll);
+            score += roll;
+            printf("Your score: %d\n", score);
+
+            if (score == 20) {
+                printf("Congratulations, you reached 20! You win!\n");
+                break;
+            } else if (score > 20) {
+                printf("Oops! You exceeded 20. You lose!\n");
+                break;
+            }
+        }
+    }
+}
+
