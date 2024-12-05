@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+void displayChoice(int choice) {
+    if (choice == 0) cout << "Rock";
+    else if (choice == 1) cout << "Paper";
+    else cout << "Scissors";
+}
+
+int main() {
+    srand(time(0));
+    int userChoice, computerChoice;
+    char playAgain;
+
+    do {
+        cout << "Choose an option:\n";
+        cout << "0 -> Rock\n1 -> Paper\n2 -> Scissors\n";
+        cout << "Enter your choice: ";
+        cin >> userChoice;
+        if (userChoice < 0 || userChoice > 2) {
+            cout << "Invalid choice. Try again.\n";
+            continue;
+        }
+        computerChoice = rand() % 3;
+        cout << "You chose: ";
+        displayChoice(userChoice);
+        cout << "\nComputer chose: ";
+        displayChoice(computerChoice);
+        cout << endl;
+
+        if (userChoice == computerChoice) {
+            cout << "It's a tie!\n";
+        } else if ((userChoice == 0 && computerChoice == 2) || // Rock beats Scissors
+                   (userChoice == 1 && computerChoice == 0) || // Paper beats Rock
+                   (userChoice == 2 && computerChoice == 1)) { // Scissors beats Paper
+            cout << "You win!\n";
+        } else {
+            cout << "Computer wins!\n";
+        }
+
+        cout << "Do you want to play again? (y/n): ";
+        cin >> playAgain;
+    } while (playAgain == 'y' || playAgain == 'Y');
+
+    cout << "Thanks for playing!\n";
+    return 0;
+}
