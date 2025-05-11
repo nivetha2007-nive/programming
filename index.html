@@ -1,240 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Child Trust Registration</title>
+  <title>Nurtured Neurons Trust - Fundraising for Child's Surgery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #d0f0c0, #a8e6cf, #f5f9ff);
       margin: 0;
-      background-color: #e6f2fb;
-      background-size: cover;
-      overflow-x: hidden;
     }
+    header {
+      background-color: #2c6d6d;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+   
+      header img {
+  height: 50px;
+  background-color: #ffffff; /* White background behind logo */
+  padding: 5px;              /* Add some space around the image */
+  border-radius: 8px;        /* Slightly rounded corners */
+}
 
-    h1, h2, h3 {
-      color: #004b8d;
+    header h2 {
+      margin-left: 10px;
+      color: #ff7f50;
+      background-color: #d0f0c0;
+      padding: 5px 15px;
+      border-radius: 8px;
+      font-size: 1.2em;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: underline;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #ff7f50;
+    }
+    .donate-button {
+      background: linear-gradient(45deg, #3a9e7b, #2c6d6d);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .donate-button:hover {
+      background: linear-gradient(45deg, #2c6d6d, #3a9e7b);
+    }
+    .hero {
       text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(rgba(44,109,109,0.7), rgba(44,109,109,0.7)),
+      url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80') center/cover no-repeat;
+      color: white;
     }
-
-    .slideshow {
-      max-width: 400px;
-      margin: 20px auto;
-      border-radius: 10px;
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .slider-container {
+      width: 90%;
       overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
     }
-
     .slides {
       display: flex;
-      width: 300%;
-      animation: slide 9s infinite;
+      transition: transform 0.5s ease-in-out;
     }
-
-    .slides img {
+    .slide {
+      min-width: 100%;
+      height: 400px;
+    }
+    .slide img {
       width: 100%;
-      height: 250px;
+      height: 100%;
       object-fit: cover;
+      border-radius: 15px;
     }
-
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(-100%); }
-      66% { transform: translateX(-200%); }
-      100% { transform: translateX(0); }
-    }
-
-    form {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: 40px auto;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 12px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-
-    button {
-      background: #0077cc;
+    .arrow-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      padding: 12px 18px;
       border: none;
+      padding: 15px;
       cursor: pointer;
-      border-radius: 8px;
-      font-size: 1em;
-      transition: background 0.3s ease;
+      font-size: 18px;
+      border-radius: 50%;
     }
-
-    button:hover {
-      background: #005fa3;
-    }
-
-    .quote-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #ffffffcc;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .quote-text {
-      flex: 1;
-      font-size: 16px;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-
-    .img-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .img-row img {
-      width: 200px;
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
+    main { padding: 20px; }
+    section {
+      background: white;
+      border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 20px auto;
+      max-width: 900px;
+      padding: 20px;
     }
-
-    label {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.95em;
+    .progress-bar {
+      background: #ddd;
+      border-radius: 20px;
+      width: 100%;
+      height: 25px;
+      overflow: hidden;
     }
-
-    @media screen and (max-width: 600px) {
-      .slides {
-        flex-direction: column;
-        width: 100%;
-        animation: none;
-      }
-
-      .slides img {
-        height: auto;
-      }
-
-      .img-row img {
-        width: 100%;
-      }
-
-      .quote-box {
-        flex-direction: column;
-        text-align: center;
-      }
+    .progress {
+      background: #3cb371;
+      width: 60%;
+      height: 100%;
+      text-align: center;
+      color: white;
+      line-height: 25px;
+    }
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #3cb371;
+      margin: 10px 0;
+      padding-left: 10px;
+    }
+    ul { list-style: none; padding: 0; }
+    ul li::before {
+      content: "✔ ";
+      color: green;
+    }
+    .card img.profile {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: -60px;
+      border: 4px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .qr-section img { width: 150px; }
+    .social a {
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #3cb371;
+      font-weight: bold;
+    }
+    .sticky-donate {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff6347;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
 
-<div class="quote-box">
-  <div class="quote-text">
-    “The smallest act of kindness is worth more than the grandest intention.”<br>
-    “Giving is not just about making a donation. It is about making a difference.”
+<header>
+  <div style="display: flex; align-items: center;">
+    <img src="https://static.wixstatic.com/media/bf869b_53596bff89504261ab5cad95b65a505c~mv2.png/v1/fit/w_2500,h_1330,al_c/bf869b_53596bff89504261ab5cad95b65a505c~mv2.png" alt="Logo">
+    <h2>NURTURED NEURONS TRUST</h2>
   </div>
-  <div>
-    <button>Donate</button>
-  </div>
-</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="https://muthalagammai-123.github.io/nutured-neurons/">About Us</a>
+    <a href="https://pooja-13-06.github.io/demoproject/">Schemes</a>
+    <a href="https://nivetha2007-nive.github.io/programming/">Get Involved</a>
+    <a href="https://nisha-k-s.github.io/Nurtured-Neurons/">Contact Info</a>
+    <button class="donate-button">Donate Now</button>
+  </nav>
+</header>
 
-<h1>Trust & Trust Registration - An Overview</h1>
+<section class="hero">
+  <h1>Help a Child, Save a Life 💖</h1>
+</section>
 
-<div class="slideshow">
+<section class="slider-container">
   <div class="slides">
-    <img src="https://media.istockphoto.com/id/1278323144/video/hand-putting-coins-in-glass-jar-with-donate-word-written-text-label.jpg?s=640x640&k=20&c=J5ARltdD_kQZSI9cbDtczfhHaMaJPL0aVHmocnyAcGU=" alt="Child 1" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxDeMH_iXjgKuw0Zs0CFwUIcWGzGg-c9YNEI1i5oDlxWHpDQtmuk3F7yZIpHOwytBeNJk&usqp=CAU" alt="Child 2" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2nuQBW5De3tzM6EIA7BOPTOXZgwAzDaodr3pNFY1Q9vU0M14WGS3zcG4eqXV-_-M36A&usqp=CAU" alt="Child 3" />
+    <div class="slide"><img src="https://www.sliderrevolution.com/wp-content/uploads/2021/05/Trust.jpg" alt="Slide 1"></div>
+    <div class="slide"><img src="https://cdn.cssauthor.com/wp-content/uploads/2022/04/Welfare.jpg?strip=all&lossy=1&ssl=1" alt="Slide 2"></div>
+    <div class="slide"><img src="https://www.greenhouseschoolwebsites.co.uk/blog/wp-content/uploads/2019/07/schoolsworks-trust.jpg" alt="Slide 3"></div>
+    <div class="slide"><img src="https://media.licdn.com/dms/image/v2/D5622AQFh8LDqbGpETQ/feedshare-shrink_800/B56ZW8CXGUGsAg-/0/1742616491847?e=2147483647&v=beta&t=R-Rz1dj0MolEHeXpa1Ruq-ytcafVv0fzbDL4QwY0-dc" alt="Slide 4"></div>
   </div>
-</div>
+  <button class="arrow-button arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="arrow-button arrow-right" onclick="moveSlide(1)">&#10095;</button>
+</section>
 
-<h4>Individuals establish trusts to allocate a portion of their assets or property for the benefit of another person. A trust is a fiduciary relationship involving the trustor, trustee, and beneficiary. The involved parties are outlined in the trust deed when applying for registration for trust creation.
+<main>
+  <section class="card" style="text-align:center;">
+    <img class="profile" src="https://media.gettyimages.com/id/613253596/photo/group-of-happy-gypsy-indian-children-desert-village-india.jpg?s=612x612&w=gi&k=20&c=xcHn3bTaaHWHjfJPVrqwz3Asq3SIyhQD6wFrJCK22zg=" alt="Child">
+    <h2>About the Child</h2>
+    <p>This little warrior is fighting Tetralogy of Fallot, a critical heart condition. Surgery at MGM Health Care, Chennai, will cost ₹4–5 lakhs. Let's help save his life.</p>
+  </section>
 
-A trust is established when the trustor transfers a specific asset or property to the trustee for the ultimate benefit of the beneficiary. The beneficiary, who is typically a third party, may have a connection to both the trustor and the trustee.
+  <section>
+    <h2>Goal Progress</h2>
+    <div class="progress-bar">
+      <div class="progress">₹3,00,000 / ₹5,00,000</div>
+    </div>
+  </section>
 
-Therefore, the relationship between the parties involved is essential in defining trust. According to the Indian Trusts Act of 1882, a trust is defined as a "Relationship between the trustor and trustee to hold specific benefits for the beneficiary."
-</h4>
+  <section>
+    <h2>Time Left</h2>
+    <p id="countdown" style="font-weight: bold; font-size: 1.2em; color: red;"></p>
+  </section>
 
-<center>
-  <h1>You Can Also Be a Part</h1>
-  <div class="img-row">
-    <img src="https://static.vecteezy.com/system/resources/previews/003/578/849/non_2x/charity-foundation-logo-free-vector.jpg" alt="Image 1">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR99_ZhV8lc1VJG5fm0MHCRFkqOuZaX3JwAY-q01fxgDBoh7OrGrYk4qNAtEUSDg88WThY&usqp=CAU" alt="Image 2">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4kVN7opBNVKa9ejVb2LqNoORjw7rHLh__4XIo2uVTlQdzyZMSSofMnAuZ6M3-4D4Rjg4&usqp=CAU" alt="Image 3">
-    <img src="https://vydehifoundation.org/wp-content/uploads/2024/07/social-justice.png" alt="Image 4">
-  </div>
-</center>
+  <section>
+    <h2>What Our Supporters Say</h2>
+    <blockquote>"Every child deserves a chance. Happy to contribute!" — Priya, Chennai</blockquote>
+    <blockquote>"Such a trustworthy cause. Wishing the child a speedy recovery!" — Raj, Bangalore</blockquote>
+  </section>
 
-<h1>Regulatory Authority and Laws for Trust Registration</h1>
-<h2>Trusts Act of 1882:</h2> <h4>This act provides the legal framework for registering and administrating private trusts. It outlines the rights, responsibilities, and procedures associated with registration for private trust.</h4>
-<h2>Income Tax Act of 1961:</h2> <h4>The Income Tax Act grants certain tax benefits and exemptions to registered trusts. Donors can take advantage of tax deductions under this act when making contributions to registered trusts.</h4>
-<h2>Societies Registration Act of 1860:</h2> <h4>Although it does not directly govern registration of trust establishment, this act regulates the trust formation and functioning of societies involved in charitable, literary, scientific, or artistic activities. Societies often work alongside trusts and may engage in similar endeavors</h4>.
+  <section>
+    <h2>How You Can Help</h2>
+    <p>Scan the QR code or use the UPI ID below to donate:</p>
+    <div class="qr-section" style="text-align:center;">
+      <img src="https://user-images.githubusercontent.com/26814804/66174669-95419a00-e699-11e9-9b3c-0aac91eee822.png" alt="QR Code">
+      <div class="qr-label">Scan to Donate</div>
+      <div class="upi-id">UPI ID: 009994155999@icici</div>
+    </div>
+  </section>
 
-  <br><br>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ4933fPxpdfqHz1bOI9HzlIGuoRY6gwI0BhuNuTndTUXiusC0xX7DXhD5XwstZ28VtYw&usqp=CAU" alt="Trust Logo" style="display: block; margin: 0 auto; max-width: 400px; border-radius: 10px;">
-</h3>
+  <section class="social">
+    <h2>Share With Friends</h2>
+    <a href="https://wa.me/?text=Please support this child: [your site link]" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=[your site link]" target="_blank">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=[your site link]&text=Please support this child" target="_blank">Twitter</a>
+  </section>
+</main>
 
-<center>
-  <h2>Register with Nurtured Neurons Trust</h2>
-</center>
-
-<form id="registrationForm">
-  <input type="text" name="name" placeholder="Full Name" required />
-  <input type="email" name="email" placeholder="Email Address" required />
-  <input type="text" name="phone" placeholder="Phone Number" required />
-  <input type="text" name="address" placeholder="Address" required />
-  <input type="text" name="city" placeholder="City" required />
-  <input type="text" name="state" placeholder="State" required />
-  <textarea name="message" placeholder="Why do you want to join?" required></textarea>
-  <label>
-    <input type="checkbox" id="agree" required />
-    I agree to all the conditions and understand the goals of Nurtured Neurons Trust.
-  </label><br><br><center>
-  <button type="submit">Submit</button></center>
-</form>
-
-<div class="img-row" style="margin-top: 40px;">
-  <img src="https://marketplace.canva.com/EAFv_yqJeek/2/0/1600w/canva-black-%26-white-minimalist-signature-personal-brand-logo-XA8Ge8-5GII.jpg" alt="Logo 1" style="width: 100px;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnK9G1Pwfn0CsslzHgXktEhKhZXc7gwRKDUiw0zdfYWltSbGiyS04fDbCHF64Lm9lZDbY&usqp=CAU" alt="Logo 2" style="width: 100px;">
-  <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logo-design-company-logo-template-28b695cda0847fe74929301c2358b736_screen.jpg?ts=1681851496" alt="Logo 3" style="width: 100px;">
+<div class="sticky-donate" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">
+  ❤ Donate Now
 </div>
 
 <script>
-  const form = document.getElementById('registrationForm');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+  let currentIndex = 0;
+  function moveSlide(direction) {
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    slides.style.transform = translateX(-${currentIndex * 100}%);
+  }
 
-    const response = await fetch('http://localhost:3000/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    const result = await response.json();
-    alert(result.message);
-  });
+  var deadline = new Date("May 31, 2025 23:59:59").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var t = deadline - now;
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((t % (1000 * 60)) / 1000);
+    document.getElementById("countdown").innerHTML =
+      days + "d " + hours + "h " + minutes + "m " + seconds + "s left to save a life!";
+    if (t < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "Time's up! Please help urgently!";
+    }
+  }, 1000);
 </script>
 
 </body>
