@@ -2,15 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Child Trust Registration</title>
   <style>
-    body {
-      font-family: Arial;
-      padding: 20px;
-      background: url('https://t3.ftcdn.net/jpg/01/93/91/96/360_F_193919655_JYOhhGqiFmMRSkA7RP6kaFhDp93pqJQz.jpg') no-repeat center center fixed;
-      background-size: cover;
+    * {
+      box-sizing: border-box;
     }
-.slideshow {
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background-color: #e6f2fb;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      color: #004b8d;
+      text-align: center;
+    }
+
+    .slideshow {
       max-width: 400px;
       margin: 20px auto;
       border-radius: 10px;
@@ -38,114 +51,191 @@
     }
 
     form {
-      background: rgba(255, 255, 255, 255); /* semi-transparent white */
+      background: rgba(255, 255, 255, 0.95);
       padding: 40px;
-      border-radius: 8px;
+      border-radius: 12px;
       max-width: 500px;
-      margin: auto;
+      margin: 40px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
     }
 
     button {
-      background: #4CAF50;
+      background: #0077cc;
       color: white;
-      padding: 10px 15px;
+      padding: 12px 18px;
       border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    .quote-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffffcc;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .quote-text {
+      flex: 1;
+      font-size: 16px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .img-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .img-row img {
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+
+    @media screen and (max-width: 600px) {
+      .slides {
+        flex-direction: column;
+        width: 100%;
+        animation: none;
+      }
+
+      .slides img {
+        height: auto;
+      }
+
+      .img-row img {
+        width: 100%;
+      }
+
+      .quote-box {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-<div style="display: flex; justify-content: space-between; align-items: center; background-color: #ffffffcc; padding: 10px 20px; border-radius: 8px; margin-bottom: 20px;">
-  <div style="flex: 1; font-size: 16px; font-weight: bold; color: #2e7d32;">
+
+<div class="quote-box">
+  <div class="quote-text">
     “The smallest act of kindness is worth more than the grandest intention.”<br>
     “Giving is not just about making a donation. It is about making a difference.”
   </div>
   <div>
-    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      Donate
-    </button>
+    <button>Donate</button>
   </div>
 </div>
+
 <h1>Trust & Trust Registration - An Overview</h1>
 
-    <div class="slides">
-      <img src="https://media.istockphoto.com/id/1278323144/video/hand-putting-coins-in-glass-jar-with-donate-word-written-text-label.jpg?s=640x640&k=20&c=J5ARltdD_kQZSI9cbDtczfhHaMaJPL0aVHmocnyAcGU="alt="Child 1" />
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxDeMH_iXjgKuw0Zs0CFwUIcWGzGg-c9YNEI1i5oDlxWHpDQtmuk3F7yZIpHOwytBeNJk&usqp=CAU" alt="Child 2" />
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2nuQBW5De3tzM6EIA7BOPTOXZgwAzDaodr3pNFY1Q9vU0M14WGS3zcG4eqXV-_-M36A&usqp=CAU" alt="Child 3" />
-    </div>
+<div class="slideshow">
+  <div class="slides">
+    <img src="https://media.istockphoto.com/id/1278323144/video/hand-putting-coins-in-glass-jar-with-donate-word-written-text-label.jpg?s=640x640&k=20&c=J5ARltdD_kQZSI9cbDtczfhHaMaJPL0aVHmocnyAcGU=" alt="Child 1" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxDeMH_iXjgKuw0Zs0CFwUIcWGzGg-c9YNEI1i5oDlxWHpDQtmuk3F7yZIpHOwytBeNJk&usqp=CAU" alt="Child 2" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2nuQBW5De3tzM6EIA7BOPTOXZgwAzDaodr3pNFY1Q9vU0M14WGS3zcG4eqXV-_-M36A&usqp=CAU" alt="Child 3" />
   </div>
-<h3>Individuals establish trusts to allocate a portion of their assets or property for the benefit of another person. A trust is a fiduciary relationship involving the trustor, trustee, and beneficiary. The involved parties are outlined in the trust deed when applying for registration for trust creation.
+</div>
+
+<h4>Individuals establish trusts to allocate a portion of their assets or property for the benefit of another person. A trust is a fiduciary relationship involving the trustor, trustee, and beneficiary. The involved parties are outlined in the trust deed when applying for registration for trust creation.
 
 A trust is established when the trustor transfers a specific asset or property to the trustee for the ultimate benefit of the beneficiary. The beneficiary, who is typically a third party, may have a connection to both the trustor and the trustee.
 
 Therefore, the relationship between the parties involved is essential in defining trust. According to the Indian Trusts Act of 1882, a trust is defined as a "Relationship between the trustor and trustee to hold specific benefits for the beneficiary."
-</h3>
+</h4>
+
 <center>
-<h1>you can also be a part</h1>
-<div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
-  <img src="https://static.vecteezy.com/system/resources/previews/003/578/849/non_2x/charity-foundation-logo-free-vector.jpg" alt="Image 1" style="width: 200px; height: auto; border-radius: 10px;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR99_ZhV8lc1VJG5fm0MHCRFkqOuZaX3JwAY-q01fxgDBoh7OrGrYk4qNAtEUSDg88WThY&usqp=CAU" alt="Image 2" style="width: 200px; height: auto; border-radius: 10px;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4kVN7opBNVKa9ejVb2LqNoORjw7rHLh__4XIo2uVTlQdzyZMSSofMnAuZ6M3-4D4Rjg4&usqp=CAU" alt="Image 3" style="width: 200px; height: auto; border-radius: 10px;">
-  <img src="https://vydehifoundation.org/wp-content/uploads/2024/07/social-justice.png" alt="Image 3" style="width: 200px; height: auto; border-radius: 10px;">
-</div>
+  <h1>You Can Also Be a Part</h1>
+  <div class="img-row">
+    <img src="https://static.vecteezy.com/system/resources/previews/003/578/849/non_2x/charity-foundation-logo-free-vector.jpg" alt="Image 1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR99_ZhV8lc1VJG5fm0MHCRFkqOuZaX3JwAY-q01fxgDBoh7OrGrYk4qNAtEUSDg88WThY&usqp=CAU" alt="Image 2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4kVN7opBNVKa9ejVb2LqNoORjw7rHLh__4XIo2uVTlQdzyZMSSofMnAuZ6M3-4D4Rjg4&usqp=CAU" alt="Image 3">
+    <img src="https://vydehifoundation.org/wp-content/uploads/2024/07/social-justice.png" alt="Image 4">
+  </div>
 </center>
+
 <h1>Regulatory Authority and Laws for Trust Registration</h1>
-<h3>
-The Registrar of Trusts is the primary regulatory authority responsible for the registration of trust in India. Their role involves maintaining a comprehensive database of all registered trusts in the country. The registration process for private trusts is governed by the Trusts Act of 1882.
+<h2>Trusts Act of 1882:</h2> <h4>This act provides the legal framework for registering and administrating private trusts. It outlines the rights, responsibilities, and procedures associated with registration for private trust.</h4>
+<h2>Income Tax Act of 1961:</h2> <h4>The Income Tax Act grants certain tax benefits and exemptions to registered trusts. Donors can take advantage of tax deductions under this act when making contributions to registered trusts.</h4>
+<h2>Societies Registration Act of 1860:</h2> <h4>Although it does not directly govern registration of trust establishment, this act regulates the trust formation and functioning of societies involved in charitable, literary, scientific, or artistic activities. Societies often work alongside trusts and may engage in similar endeavors</h4>.
 
-In the case of public trusts, no singular governing act applies uniformly. Public trusts in India must be registered with the relevant state authority as required by the applicable state act.
-
-Several laws play a significant role in the regulation of trusts in India. These include:
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ4933fPxpdfqHz1bOI9HzlIGuoRY6gwI0BhuNuTndTUXiusC0xX7DXhD5XwstZ28VtYw&usqp=CAU" alt="Trust Logo" style="display: block; margin: 0 auto; max-width: 400px; border-radius: 10px;">
-
-<h2>Trusts Act of 1882:</h2> This act provides the legal framework for registering and administrating private trusts. It outlines the rights, responsibilities, and procedures associated with registration for private trust.
-<h2>Income Tax Act of 1961:</h2> The Income Tax Act grants certain tax benefits and exemptions to registered trusts. Donors can take advantage of tax deductions under this act when making contributions to registered trusts.
-<h2>Societies Registration Act of 1860:</h2> Although it does not directly govern registration of trust establishment, this act regulates the trust formation and functioning of societies involved in charitable, literary, scientific, or artistic activities. Societies often work alongside trusts and may engage in similar endeavors.</h3>
+  <br><br>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ4933fPxpdfqHz1bOI9HzlIGuoRY6gwI0BhuNuTndTUXiusC0xX7DXhD5XwstZ28VtYw&usqp=CAU" alt="Trust Logo" style="display: block; margin: 0 auto; max-width: 400px; border-radius: 10px;">
+</h3>
 
 <center>
   <h2>Register with Nurtured Neurons Trust</h2>
 </center>
-  <form id="registrationForm">
-    <input type="text" name="name" placeholder="Full Name" required />
-    <input type="email" name="email" placeholder="Email Address" required />
-    <input type="text" name="phone" placeholder="Phone Number" required />
-    <input type="text" address="Address" placeholder="Address" required />
-    <input type="city" name="city" placeholder="city" required />
-    <input type="state" name="state" placeholder="state" required />
-    <textarea name="message" placeholder="Why do you want to join?" required></textarea>
-      <label>
-        <input type="checkbox" id="agree" required />
-        I agree to all the conditions and understand the goals of Nurtured Neurons Trust.
-      </label>
-    </div>	
-    <button type="submit">Submit</button>
-  </form>
-<div style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
-  <img src="https://marketplace.canva.com/EAFv_yqJeek/2/0/1600w/canva-black-%26-white-minimalist-signature-personal-brand-logo-XA8Ge8-5GII.jpg" alt="Image 1" style="width: 100px; height: auto; border-radius: 10px;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnK9G1Pwfn0CsslzHgXktEhKhZXc7gwRKDUiw0zdfYWltSbGiyS04fDbCHF64Lm9lZDbY&usqp=CAU" alt="Image 2" style="width: 100px; height: auto; border-radius: 10px;">
-  <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logo-design-company-logo-template-28b695cda0847fe74929301c2358b736_screen.jpg?ts=1681851496" alt="Image 3" style="width: 100px; height: auto; border-radius: 10px;">
+
+<form id="registrationForm">
+  <input type="text" name="name" placeholder="Full Name" required />
+  <input type="email" name="email" placeholder="Email Address" required />
+  <input type="text" name="phone" placeholder="Phone Number" required />
+  <input type="text" name="address" placeholder="Address" required />
+  <input type="text" name="city" placeholder="City" required />
+  <input type="text" name="state" placeholder="State" required />
+  <textarea name="message" placeholder="Why do you want to join?" required></textarea>
+  <label>
+    <input type="checkbox" id="agree" required />
+    I agree to all the conditions and understand the goals of Nurtured Neurons Trust.
+  </label><br><br><center>
+  <button type="submit">Submit</button></center>
+</form>
+
+<div class="img-row" style="margin-top: 40px;">
+  <img src="https://marketplace.canva.com/EAFv_yqJeek/2/0/1600w/canva-black-%26-white-minimalist-signature-personal-brand-logo-XA8Ge8-5GII.jpg" alt="Logo 1" style="width: 100px;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnK9G1Pwfn0CsslzHgXktEhKhZXc7gwRKDUiw0zdfYWltSbGiyS04fDbCHF64Lm9lZDbY&usqp=CAU" alt="Logo 2" style="width: 100px;">
+  <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/logo-design-company-logo-template-28b695cda0847fe74929301c2358b736_screen.jpg?ts=1681851496" alt="Logo 3" style="width: 100px;">
 </div>
-  <script>
-    const form = document.getElementById('registrationForm');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
 
-      const response = await fetch('http://localhost:3000/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+<script>
+  const form = document.getElementById('registrationForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-      const result = await response.json();
-      alert(result.message);
+    const response = await fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
-  </script>
+
+    const result = await response.json();
+    alert(result.message);
+  });
+</script>
+
 </body>
 </html>
